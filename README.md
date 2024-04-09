@@ -77,7 +77,7 @@ sudo mkdir -p /srv/2420-files
 sudo chown -R http:http /srv
 cd /etc/nginx/sites-available
 touch nginx-2420
-cat << EOF > nginx-2420
+cat << EOF > nginx-2420 
 server {
     listen 80;
     server_name your_ip;
@@ -90,8 +90,13 @@ EOF
 sudo ln -s /etc/nginx/sites-available/nginx-2420 /etc/nginx/sites-enabled/nginx-2420
 sudo systemctl restart nginx
 ```
-we are using 'autoindex on' so nginx will show a list  of files for us
 
+if we want nginx to have access to our files so it could serve it we should change the user of our folder and whats inside it to http with the following code
+```
+sudo chown -R http:http /srv
+```
+we are using 'autoindex on' so nginx will show a list  of files for us
+after the running this command we will be able to get the required information
 ![Gsus](https://github.com/Sabbasnia/part3replacement/assets/148383173/423c9380-80e5-41c7-b60b-add4ff8e635e)
 
 
