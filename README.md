@@ -73,6 +73,19 @@ sudo mkdir /etc/nginx/sites-available
 sudo mkdir /etc/nginx/sites-enabled
 sudo mkdir -p /srv/2420-files
 sudo chown -R http:http /srv
+cd /etc/nginx/sites-available
+touch nginx-2420
+cat << EOF > nginx-2420
+server {
+    listen 80 default_server;
+    location / {
+        root /srv/2420-files;
+        autoindex on;
+    }
+}
+EOF
+sudo ln -s nginx-2420 /etc/nginx/sites-enabled/nginx-2420
+sudo systemctl restart nginx
 ```
 ine khobe ????
 
