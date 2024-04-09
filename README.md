@@ -1,4 +1,5 @@
 # part3replacement
+sina Abbasnia 
 first we have to install the nginx
 ```bash
 sudo pacman -S nginx
@@ -87,7 +88,7 @@ EOF
 sudo ln -s nginx-2420 /etc/nginx/sites-enabled/nginx-2420
 sudo systemctl restart nginx
 ```
-ine khobe ????
+we are using 'autoindex on' so nginx will show a list  of files for us
 
 
 
