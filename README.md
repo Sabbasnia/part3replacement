@@ -1,5 +1,6 @@
 # part3replacement
 sina Abbasnia 
+nginx  is a popular open source web server and reverse proxy server
 first we have to install the nginx
 ```bash
 sudo pacman -S nginx
@@ -78,17 +79,21 @@ cd /etc/nginx/sites-available
 touch nginx-2420
 cat << EOF > nginx-2420
 server {
-    listen 80 default_server;
+    listen 80;
+    server_name your_ip;
     location / {
         root /srv/2420-files;
         autoindex on;
     }
 }
 EOF
-sudo ln -s nginx-2420 /etc/nginx/sites-enabled/nginx-2420
+sudo ln -s /etc/nginx/sites-available/nginx-2420 /etc/nginx/sites-enabled/nginx-2420
 sudo systemctl restart nginx
 ```
 we are using 'autoindex on' so nginx will show a list  of files for us
+
+![Gsus](https://github.com/Sabbasnia/part3replacement/assets/148383173/423c9380-80e5-41c7-b60b-add4ff8e635e)
+
 
 
 
